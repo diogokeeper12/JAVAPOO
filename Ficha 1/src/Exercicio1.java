@@ -1,9 +1,11 @@
+import java.sql.SQLOutput;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
-
-
 
 public class Exercicio1 {
     public static void main(String[] args){
@@ -58,16 +60,68 @@ public class Exercicio1 {
                 calculaTemperaturas(temperaturas);
                 break;
 
+//ex5: Escrever um programa que leia sucessivas vezes a base e altura
             case 5:
-                System.out.println("Indisponivel");
+                double base, altura,area,perimetro;
+                while(true){
+                    System.out.println("Insira a base do triângulo: ");
+                    base = scanner.nextDouble();
+                    if(base ==0.0){
+                        break;
+                    }
+                    System.out.println("Insira a altura do triângulo: ");
+                    altura = scanner.nextDouble();
+
+                    area = (base*altura) / 2;
+                    perimetro = base + altura + Math.sqrt(Math.pow(base,2) + Math.pow(altura,2));
+
+                    System.out.format("Area: %.5f\n",area);
+                    System.out.format("Perimetro: %.5f\n",perimetro);
+                }
+                scanner.close();
                 break;
 
             case 6:
-                System.out.println("Indisponivel");
-                break;
+                boolean continuar = true;
+                while(continuar) {
+                    System.out.println("Introduza um número: ");
+                    int num = scanner.nextInt();
+                    System.out.println("Lista de todos os números primos inferiores ao número introduzido: ");
+                    for (int i = 0; i < num; i++) {
+                        if (isPrime(i) == true) {
+                            System.out.format("%d \n", i);
+                        }
+                    }
+                    System.out.println("Deseja continuar? 1-Sim 0-Não");
+                    int choice = scanner.nextInt();
+                    if(choice == 1){
+                        continuar = true;
+                    }
+                    else{
+                        break;
+                    }
+                }
+               break;
 
             case 7:
-                System.out.println("Indisponivel");
+                LocalDateTime dataAgora = LocalDateTime.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+                String dataFormatada = dataAgora.format(formatter);
+
+
+                System.out.println("Introduza o seu ano de nascimento: \n");
+                int ano = scanner.nextInt();
+                System.out.println("Introduza o seu mes de nascimento: \n");
+                int mes = scanner.nextInt();
+                System.out.println("Introduza o seu dia de nascimento: \n");
+                int dia = scanner.nextInt();
+
+                LocalDate dataNascimento = LocalDate.of(ano, mes, dia);
+
+                long horasVida = ChronoUnit.HOURS.between(dataNascimento.atStartOfDay(),dataAgora);
+                System.out.format("A sua idade em horas é: %d. \n", horasVida);
+                System.out.format("Este cálculo foi realizado às: %s\n",dataFormatada);
+                scanner.close();
                 break;
 
             default:
@@ -146,6 +200,17 @@ public class Exercicio1 {
     //Exercicio 5
 
     //Exercicio 6
+
+    private static boolean isPrime(int n){
+        if(n <= 1){
+            return false;
+        }
+        for (int i = 2; i * i <= n; i++){
+            if(n % i == 0){return false;}
+        }
+        return true;
+    }
+
 
     //Exercicio 7
 
