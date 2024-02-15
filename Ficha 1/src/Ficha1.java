@@ -1,3 +1,8 @@
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Ficha1 {
 
     //Exercício 1
@@ -36,5 +41,16 @@ public class Ficha1 {
             fact=fact*i;
         }
         return fact;
+    }
+
+    //Exercicio 7
+    public long tempoGasto() {
+        LocalDateTime inicio = LocalDateTime.now();
+        System.out.println("Data Atual: " + inicio + "\n");
+        factorial(5000);
+        LocalDateTime fim = LocalDateTime.now();
+        System.out.println("Data Fim: " + fim + "\n");
+        Duration duracao = Duration.between(inicio, fim);
+        return duracao.toMillis();
     }
 }

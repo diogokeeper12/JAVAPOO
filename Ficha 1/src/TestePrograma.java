@@ -36,15 +36,34 @@ public class TestePrograma {
                  System.out.println("Introduza o seu saldo bancário:");
                  double saldo = scanner.nextDouble();
                 System.out.format("Olá %s, tem %f€ na conta.",nome, saldo);
+                break;
+
 
 
             case 4:
                 //Exercicio 4
                 System.out.println("Introduza um valor em Euros: ");
+                while (!scanner.hasNextInt()) {
+                    System.out.println("Erro! Por favor, introduza um número inteiro.");
+                    scanner.next();
+                }
                 int valor = scanner.nextInt();
+
                 System.out.println("Introduza uma taxa de conversão: ");
+                while (!scanner.hasNextDouble()) {
+                    System.out.println("Erro! Por favor, introduza um número decimal.");
+                    scanner.next();
+                }
                 double taxaConversao = scanner.nextDouble();
-                System.out.format("O valor em libras é: %.2f£", f1.eurosParaLibras(valor,taxaConversao));
+                System.out.format("O valor em libras é: %.2f£\n", f1.eurosParaLibras(valor,taxaConversao));
+                System.out.println("Deseja continuar? 1-Sim 0-Não");
+                while (!scanner.hasNextInt()) {
+                    System.out.println("Erro! Por favor, introduza um valor válido.");
+                    scanner.next();
+                }
+                int choice = scanner.nextInt();
+                if(choice == 0){break;}
+
 
             case 5:
                 //Exercicio 5
@@ -52,14 +71,20 @@ public class TestePrograma {
                 int valor1 = scanner.nextInt();
                 int valor2 = scanner.nextInt();
                 System.out.format("%d %d, média: %.2f",f1.maximoNumeros(valor1, valor2),f1.menorNumeros(valor1,valor2),f1.media(valor1,valor2));
+                break;
 
             case 6:
                 System.out.println("Introduza um número: ");
                 int nume = scanner.nextInt();
                 System.out.format("O factorial de %d é: %f",nume,f1.factorial(nume));
+                break;
 
             case 7:
-                    //acabar em casa!!!!!
+                System.out.println("Tempo gasto: " + f1.tempoGasto() + " milissegundos");
+                break;
+
+            default:
+                break;
         }
     }
 }
