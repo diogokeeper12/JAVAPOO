@@ -44,10 +44,6 @@ public class TestePrograma {
                 int aluno = scanner.nextInt();
                 System.out.println("A média das notas do aluno " + aluno + " é " + ex5.calculaMediaAluno(aluno));
 
-                // Calcular a média das notas de uma unidade curricular
-                System.out.println("Insira o índice da unidade curricular para calcular a média das notas:");
-                uc = scanner.nextInt();
-                System.out.println("A média das notas à unidade curricular " + uc + " é " + ex5.mediaUC(uc));
 
                 // Calcular a nota mais alta e mais baixa
                 System.out.println("A nota mais alta é " + ex5.notaMaisAlta());
