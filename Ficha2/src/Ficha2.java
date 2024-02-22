@@ -1,4 +1,7 @@
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Ficha2 {
     //EXERCICIO 1.A)
@@ -57,4 +60,30 @@ public class Ficha2 {
 
 
     //EXERCICIO 5.A)
+    //ESTA NA CLASSE EX5.JAVA
+
+    //EXERCICIO 7
+
+    public void geraValores(){
+        ArrayList<Integer> chaves = new ArrayList<>();
+        ArrayList<Integer> estrelas = new ArrayList<>();
+        Random rand = new Random();
+        for(int i = 0; i<5; i++){
+            int num = rand.nextInt(50);
+            chaves.add(num);
+        }
+        System.out.format("Chaves: %s \n" , chaves.toString());
+        for(int i = 0;i<2;i++){
+            int num = rand.nextInt(9);
+            estrelas.add(num);
+        }
+        System.out.format("Estrelas: %s \n", estrelas.toString());
+
+        ArrayList<Integer> resultado = new ArrayList<>();
+        resultado.addAll(chaves);
+        resultado.addAll(estrelas);
+        System.out.format("Resultado: %s \n", resultado.toString());
+    }
+
+
 }
