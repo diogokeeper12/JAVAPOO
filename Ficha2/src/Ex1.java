@@ -1,7 +1,9 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ex1 {
     Ficha2 f2 = new Ficha2();
+    vetores vect;
 
     public void escolheEx1(){
         Scanner scanner = new Scanner(System.in);
@@ -17,7 +19,8 @@ public class Ex1 {
                     valor = scanner.nextInt();
                     valores[i] = valor;
                 }
-                f2.minArray(valores);
+                vect = new vetores(valores);
+                System.out.println("O menor é " + vect.minArray());
                 break;
             case 2:
                 System.out.println("Introduza dois números: ");
@@ -43,7 +46,8 @@ public class Ex1 {
                     array2[i] = valorelem;
                 }
 
-                f2.calculaIguais(array1,array2);
+                System.out.format("Array com valores comuns: %s",Arrays.toString(f2.calculaIguais(array1,array2)));
+
 
                 break;
 

@@ -1,4 +1,5 @@
 public class Ex5 {
+
     private int[][] notasTurma = new int[5][5];
 
     public void atualizaNotas(int [][] notas){

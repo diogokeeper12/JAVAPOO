@@ -13,6 +13,16 @@ public class Ficha2 {
                 pos = i;
             }
         }
+
+        /**
+         * ou entao
+         * int min = Integer.MAX.VALUE     array[0]
+         * for(int v:array){
+         *      if(v<min)
+         *      min = v;
+         * }
+         *
+         */
         System.out.format("Mínimo do array = %d, na posição %d",min,pos);
     }
 
@@ -32,15 +42,26 @@ public class Ficha2 {
     }
 
     //EXERCICIO 1.C)
-    public void calculaIguais(int[] a1,int[] a2){
-        System.out.println("Os valores repitos são:");
-        for (int k : a1) {
-            for (int i : a2) {
-                if (k == i) {
-                    System.out.println(k);
+    public int[] calculaIguais(int[] a1,int[] a2){
+        Arrays.sort(a1);
+        Arrays.sort(a2);
+        int res[] = new int[Math.min(a1.length, a2.length)];
+        int pos = 0;
+        for(int i = 0;i< a1.length;i++){
+            if(i==0 || a1[i] != a1[i-1]) {
+                boolean found = false;
+                for (int j = 0; j < a2.length & !found; j++) {
+                    if (a1[i] == a2[j]) {
+                        res[pos++] = a1[i];
+                        found = true;
+                    }
                 }
             }
         }
+        if (pos < res.length) {
+            res = Arrays.copyOfRange(res, 0, pos);
+        }
+        return res;
     }
 
     //EXERCICIO 3.A)
