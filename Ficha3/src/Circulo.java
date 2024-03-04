@@ -101,9 +101,9 @@ public class Circulo {
      * e)
      * Altera o posicionamento do círculo
      */
-    public void alteraPos(int newX,int newY){
-        this.setX(newX);
-        this.setY(newY);
+    public void alteraPos(double newX,double newY){
+        setX(newX);
+        setY(newY);
     }
 
     /**
@@ -112,7 +112,7 @@ public class Circulo {
      */
     public double calculaArea(){
         return Math.PI *(2*this.raio);
-    }
+    } // em vez de this.raio poderiamos colocar apenas raio. SO USAMOS O THIS PARA DISTINGUIR VARIAVEIS IGUAIS
 
     /**
      * g)Calcula o perimetro do circulo
@@ -127,26 +127,30 @@ public class Circulo {
      *
      */
 
-//    public boolean equals(Object o){
-//        if(this== o){
-//            return true;
-//        }
-//        if((o==null) || (this.getClass() != o.getClass())){
-//            return false;
-//        }
-//        Circulo c = (Circulo) o;
-//        return (this.x == c.getX() && this.y == c.getY() && this.raio == c.getRaio());
-//    }
+    public boolean equals(Object o){
+        if(this== o){
+            return true;
+        }
+        if((o==null) || (this.getClass() != o.getClass())){
+            return false;
+        }
+        Circulo c = (Circulo) o;
+        return (this.getX() == c.getX() && this.getY() == c.getY() && this.getRaio() == c.getRaio());
+    }
 
 
     /**
      * TODO PORQUE NAO DA ?
      */
-//    public String toString(){
-//        return "Cx = " + this.x + " -  Cy = " + this.y + " -  Craio = " + this.raio;
-//    }
+    public String toString(){
+        return "Cx = " + this.x + " -  Cy = " + this.y + " -  Craio = " + this.raio;
+    }
 
 
+    /**
+     *
+     * @return Tipo da classe
+     */
     public Circulo clone(){
         return new Circulo(this);
     }

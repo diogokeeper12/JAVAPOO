@@ -7,6 +7,7 @@ public class vetores {
         vetor = Arrays.copyOf(array,array.length);
     }
 
+    //EXERCICIO 1.A
     public int minArray(){
         int min = vetor[0];
         int pos = 0;
