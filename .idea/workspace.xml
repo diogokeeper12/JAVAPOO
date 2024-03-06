@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9230a05-4448-44e9-b548-c035f8c79f52" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Aula4/src/videos/Filme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c9230a05-4448-44e9-b548-c035f8c79f52" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +27,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/DiogoKeeper12/Documents/JavaPOO/JAVAPOO",
+    "last_opened_file_path": "/home/diogokeeper12/Documents/GitHub/JAVAPOO/Ficha3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -43,7 +40,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-20.0.2-corretto-20.0.2.1-4caba194b151-5bc9ecd2" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-78a6f59c" />
       </set>
     </attachedChunks>
   </component>
@@ -58,6 +55,7 @@
       <workItem from="1707344214607" duration="115000" />
       <workItem from="1707416091686" duration="152000" />
       <workItem from="1707416313653" duration="1231000" />
+      <workItem from="1709764616247" duration="41000" />
     </task>
     <servers />
   </component>
