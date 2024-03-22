@@ -1,5 +1,7 @@
 package com.projetoPoo.entidades;
 
+import java.util.ArrayList;
+
 /**
  * Classe que implementa um Utilizado
  * 
@@ -53,17 +55,15 @@ public class Utilizador {
        * Método que determina o fator multiplicativo de um utilizador
        */
       private double defFatorMultiplicativo(TipoUser tipoUser){
-        switch(tipoUser){
-            case PROFISSIONAL:
-                return 0.8;
-            case AMADOR:
-                return 0.6;
-            case OCASIONAL:
-                return 0.4;
-            default:
-                break;
-        }
-      }
+          return switch (tipoUser) {
+              case PROFISSIONAL -> 0.8;
+              case AMADOR -> 0.6;
+              case OCASIONAL -> 0.4;
+              default -> throw new IllegalArgumentException("Invalid TipoUser: " + tipoUser);
+          };
+    }
+
+
 
 
       /**
@@ -78,7 +78,17 @@ public class Utilizador {
             this.tipoUser = tipoUser;
             this.freqCardiacaMedia = freqCardiacaMedia;
             this.fatorMultiplicativo = definirFatorMultiplicativo(tipoUtilizador);
-            this.atividadesRealizadas = new ArrayList<>();
+            this.atividadesRealizadas = new ArrayList<Atividade>();
        }
+
+    /**
+     * Construtor de cópia de Utilizador
+     * Aceita como parametro outro utilizador e utiliza os métodos
+     * de acesso aos valores das variáveis de instância.
+     */
+
+
+
+
 
 }
